@@ -128,12 +128,12 @@ form {
 }
 
 label {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 label::first-letter {
   display: inline-block;
-  margin-right: 4px;
+  margin-right: 2px;
   font-size: 1.8rem;
 }
 
