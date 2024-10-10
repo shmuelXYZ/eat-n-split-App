@@ -15,7 +15,6 @@ export function FormAddFreind({ onAddFriend }) {
       image: `${image}?=${id}`,
       balance: 0,
     };
-    console.log(newFriend);
     onAddFriend(newFriend);
     setName("");
     setImage("https://i.pravatar.cc/48");

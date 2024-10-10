@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { Button } from "./Button";
+// import { Friend } from "./Friend";
 
-export function FormSplitBill({ curFreind }) {
+export function FormSplitBill({ curFreind, onSplitBill }) {
   const [bill, steBill] = useState("");
   const [yourPay, setYourPay] = useState("");
   const [whoPay, setWhoPay] = useState("you");
   const friendExpens = bill && bill - yourPay;
+
+  function handelSubmit(e) {
+    e.preventDefault();
+    if (!bill || !yourPay) return;
+    onSplitBill(whoPay === "you" ? friendExpens : friendExpens - bill);
+  }
+
   return (
-    <form className="form-split-bill">
+    <form className="form-split-bill" onSubmit={handelSubmit}>
       <h2>split a bill with {curFreind}</h2>
 
       <label>💵 Bill value </label>

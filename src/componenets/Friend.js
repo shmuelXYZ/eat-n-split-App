@@ -3,7 +3,7 @@ import { Button } from "./Button";
 export function Friend({ name, image, balance, onCurFriend, curFreind }) {
   const isSelcted = curFreind === name;
   return (
-    <li className={isSelcted && "selected"}>
+    <li className={isSelcted ? "selected" : undefined}>
       <img src={image} alt=""></img>
       <h3>{name}</h3>
       {balance === 0 ? (
