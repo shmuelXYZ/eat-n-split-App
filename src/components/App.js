@@ -45,6 +45,7 @@ const App = () => {
 
   function handelCurFriend(friend) {
     setCurFriend(friend === curFreind ? null : friend);
+    console.log(curFreind, friend);
     // handelShowAddFriend(false);
   }
 
@@ -76,7 +77,11 @@ const App = () => {
         </Button>
       </div>
       {curFreind && (
-        <FormSplitBill curFreind={curFreind} onSplitBill={handelSplitBill} />
+        <FormSplitBill
+          curFreind={curFreind}
+          onSplitBill={handelSplitBill}
+          key={curFreind}
+        />
       )}
     </div>
   );

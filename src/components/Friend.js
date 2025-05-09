@@ -1,9 +1,9 @@
 import { Button } from "./Button";
 
 export function Friend({ name, image, balance, onCurFriend, curFreind }) {
-  const isSelcted = curFreind === name;
+  const isSelected = curFreind === name;
   return (
-    <li className={isSelcted ? "selected" : undefined}>
+    <li className={isSelected ? "selected" : undefined}>
       <img src={image} alt=""></img>
       <h3>{name}</h3>
       {balance === 0 ? (
@@ -18,7 +18,7 @@ export function Friend({ name, image, balance, onCurFriend, curFreind }) {
         </p>
       )}
       <Button onClick={() => onCurFriend(name)}>
-        {isSelcted ? "Close" : "Select"}
+        {isSelected ? "Close" : "Select"}
       </Button>
     </li>
   );
